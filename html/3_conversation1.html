@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <title>코린이의 모험 ver 1.0</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+     if((favorability<favorability_limit)||(score<score_limit)){
+       var texts=["",
+       "${name} : 교수님 랩실에 들어가서 공부하고 싶은데 방법이 있으려나... 한번 교수님께 부탁드려봐야겠다",
+       "${name} : 저기 교수님... 저 랩실에 들어가고 싶은데요... 저도 들어갈 수 있을까요??",
+       "교수 : 지금 내 랩실에 학부생이 많아서 말이야... 더 이상 받기는 좀 힘들 것 같네",
+       "${name} : 아... 알겠습니다!!"];
+       var counter=0;
+       $('#triangle').click(function(){
+         counter=(counter + 1) % texts.length;
+         document.getElementById('texts').innerHTML = texts[counter];
+
+         if(counter==0){
+           $('#outer-box').hide();
+         }
+       });
+     }
+     if((favorability>=favorability_limit)||(score>=score_limit)){
+       var texts=["",
+       "교수 : 저기 ${name}학생 자네 내 랩실에 들어올 생각 없나? 공부할 수 있는 자리도 마련해줄 수 있고 개인pc사용도 가능하네",
+       "${name} : 네? 제가 랩실을요? 저도 가능한가요??",
+       "교수 : 그럼 물론이지 내가 보기엔 자네 아주 성실하고 잘하는 학생 같아서 랩실와서 잘 할 거라 생각이 되네",
+       "${name} : 음.."];
+       var counter=0;
+       $('#triangle').click(function(){
+         counter=(counter + 1) % texts.length;
+         document.getElementById('texts').innerHTML = texts[counter];
+
+         if(counter==0){
+           $('#outer-box').hide();
+           $('#quiz').show();
+           $('#systemimg2').show();
+         }
+       });
+     }
+   })
+   </script>
+  </head>
+  <body>
+    <div id = "outer-box">
+      <div id="image-box">
+        <img src="C:\Users\kc258\OneDrive\Desktop\sample\img\주인공_남자.png" id="img1">
+      </div>
+      <div id= "conversation-box">
+        <div id= texts></div>
+        <img id='triangle' src='C:\Users\kc258\OneDrive\Desktop\sample\img\세모.png' width="50px">
+      </div>
+    </div>
+  </body>
+</html>

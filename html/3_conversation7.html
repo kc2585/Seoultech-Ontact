@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <title>코린이의 모험 ver 1.0</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+   $(document).ready(function(){
+     $('#systemimg1').hide();
+     var texts=["",
+     "교수 : ${name}학생 이게 이번에 우리의 연구과제인데 자네 혹시 이 부분 맡아줄 수 있나?",
+     "${name} : 넵 걱정마세요!"];
+     var counter=0;
+     $('#triangle').click(function(){
+       counter=(counter + 1) % texts.length;
+       document.getElementById('texts').innerHTML = texts[counter];
+
+       if(counter==0){
+         $('#outer-box').hide();
+         location.href = "file:///C:/Users/kc258/OneDrive/Desktop/sample/html/3_quiz2.html";
+       }
+     });
+
+   })
+   </script>
+  </head>
+  <body>
+    <div id="audio-box">
+      <audio autoplay controls>
+        <source src="C:\Users\kc258\OneDrive\Desktop\sample\audio\conversation.mp3" type="audio/mp3">
+      </audio>
+    </div>
+    <div id = "outer-box">
+      <div id="image-box">
+        <img src="C:\Users\kc258\OneDrive\Desktop\sample\img\주인공_남자.png" id="img1">
+      </div>
+      <div id= "conversation-box">
+        <div id= texts></div>
+        <img id='triangle' src='C:\Users\kc258\OneDrive\Desktop\sample\img\세모.png' width="50px">
+      </div>
+    </div>
+  </body>
+</html>

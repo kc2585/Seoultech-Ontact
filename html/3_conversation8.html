@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <title>코린이의 모험 ver 1.0</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+   $(document).ready(function(){
+     $('#systemimg1').hide();
+     if()
+     var texts=["",
+     '${name} : 어느덧 임기도 끝나가고 남은건 재정감사뿐이구나.',
+     "학생회1 : ${name}야 재정감사 공문 내려왔어?",
+     "${name} : 응. 이 양식 맞춰서 제출하면 될거같아. 사무부 고생해줘.",
+     "학생회1 : 알겠어. 그런데 영수증 하나가 비는데 다시 받아올 수 있어?",
+     "${name} : 알겠어. 내가 받아올게.",
+     "영수증을 재발급받기위해 퀴즈를 풀어보세요!"];
+     var counter=0;
+     $('#triangle').click(function(){
+       counter=(counter + 1) % texts.length;
+       document.getElementById('texts').innerHTML = texts[counter];
+
+       if(counter==0){
+         $('#outer-box').hide();
+         $('#systemimg1').show();
+       }
+     });
+   })
+   </script>
+  </head>
+  <body>
+    <div id = "outer-box">
+      <div id="image-box">
+        <img src="C:\Users\kc258\OneDrive\Desktop\sample\img\주인공_남자.png" id="img1">
+      </div>
+      <div id= "conversation-box">
+        <div id= texts></div>
+        <img id='triangle' src='C:\Users\kc258\OneDrive\Desktop\sample\img\세모.png' width="50px">
+      </div>
+    </div>
+  </body>
+</html>

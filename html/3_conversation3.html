@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <title>코린이의 모험 ver 1.0</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+   $(document).ready(function(){
+     $('#systemimg1').hide();
+     var texts=["",
+     "교수 : 다들 수업내용 이해되나요?",
+     "학생들 : 네",
+     "교수 : 이상으로 수업 마치겠습니다",
+     "${name} : 휴... 졸려 죽는줄 알았네. 어라 교수님한테서 톡이왔네",
+     "교수 : ${name}학생 내가 자료 줄테니까 이것들 공부해올 수 있나?",
+     "${name} : (으으 수업 끝나자마자 과제라니) 물론이죠 교수님! 보내주세요"];
+     var counter=0;
+     $('#triangle').click(function(){
+       counter=(counter + 1) % texts.length;
+       document.getElementById('texts').innerHTML = texts[counter];
+
+       if(counter==0){
+         $('#outer-box').hide();
+         location.href = "file:///C:/Users/kc258/OneDrive/Desktop/sample/html/3_quiz1.html";
+       }
+     });
+   })
+   </script>
+  </head>
+  <body>
+    <div id ="audio-box">
+      <audio preload="auto" controls=0>
+        <source src="C:\Users\kc258\OneDrive\Desktop\sample\audio\conversation.mp3">
+      </audio>
+      <script src="C:\Users\kc258\OneDrive\Desktop\sample\js\audioplayer.js"></script>
+      <script>$( function() { $( 'audio' ).audioPlayer(); } );</script>
+    </div>
+    <div id = "outer-box">
+      <div id="image-box">
+        <img src="C:\Users\kc258\OneDrive\Desktop\sample\img\교수_수업.png" id="img1">
+      </div>
+      <div id= "conversation-box">
+        <div id= texts></div>
+        <img id='triangle' src='C:\Users\kc258\OneDrive\Desktop\sample\img\세모.png' width="50px">
+      </div>
+    </div>
+  </body>
+</html>

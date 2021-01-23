@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <title>코린이의 모험 ver 1.0</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+   $(document).ready(function(){
+     $('#systemimg1').hide();
+     var texts=["",
+     "${name} : 3학년인데 나중을 위해서 할만한게 뭐가 있으려나... 외부동아리도 괜찮은 것 같은데 한번 알아볼까",
+     "${name} : 소마도 한번 도전해봐야겠다",
+     "${name} : 서류준비에... 면접준비에... 코딩테스트까지 산넘어 산이다 어휴",
+     "시간이 지나 소마 결과 발표날"];
+     var counter=0;
+     $('#triangle').click(function(){
+       counter=(counter + 1) % texts.length;
+       document.getElementById('texts').innerHTML = texts[counter];
+
+       if(counter==0){
+         $('#outer-box').hide();
+         $('#systemimg1').show();
+       }
+     });
+
+   })
+   </script>
+  </head>
+  <body>
+    <div id = "outer-box">
+      <div id="image-box">
+        <img src="C:\Users\kc258\OneDrive\Desktop\sample\img\주인공_남자.png" id="img1">
+      </div>
+      <div id= "conversation-box">
+        <div id= texts></div>
+        <img id='triangle' src='C:\Users\kc258\OneDrive\Desktop\sample\img\세모.png' width="50px">
+      </div>
+    </div>
+  </body>
+</html>

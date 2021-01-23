@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <title>코린이의 모험 ver 1.0</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+   $(document).ready(function(){
+     $('#systemimg1').hide();
+     var texts=["",
+     "${name} : 슬슬 시험기간이 다가오네. 간식행사를 준비해야하는데 뭐가 좋으려나. 학생회 애들한테 물어봐야겠다.",
+     "${name} : 애들아 곧있으면 시험기간인데 이번 간식은 뭐가좋을까??",
+     "학생회1 : 햄버거도 좋고 치킨도 좋을 것 같아요!",
+     "${name} : 혹시 또 다른 의견 있니?",
+     "학생회2 : 둘 다 무난한 것 같아요. 다들 좋아하는 메뉴이기도하고.",
+     "${name} : 그럼 투표로 할까? 과반수로 고르자!"];
+     var counter=0;
+     $('#triangle').click(function(){
+       counter=(counter + 1) % texts.length;
+       document.getElementById('texts').innerHTML = texts[counter];
+
+       if(counter==0){
+         $('#outer-box').hide();
+         $('#systemimg1').show();
+       }
+     });
+
+   })
+   </script>
+  </head>
+  <body>
+    <div id = "outer-box">
+      <div id="image-box">
+        <img src="C:\Users\kc258\OneDrive\Desktop\sample\img\주인공_남자.png" id="img1">
+      </div>
+      <div id= "conversation-box">
+        <div id= texts></div>
+        <img id='triangle' src='C:\Users\kc258\OneDrive\Desktop\sample\img\세모.png' width="50px">
+      </div>
+    </div>
+  </body>
+</html>

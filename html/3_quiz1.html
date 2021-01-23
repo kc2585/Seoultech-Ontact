@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <meta charset="utf-8">
+    <title>코린이의 모험 ver 1.0</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+    <div id ="audio-box">
+      <audio preload="auto" controls>
+        <source src="C:\Users\kc258\OneDrive\Desktop\sample\audio\quiz1.mp3">
+      </audio>
+      <script src="C:\Users\kc258\OneDrive\Desktop\sample\js\audioplayer.js"></script>
+      <script>$( function() { $( 'audio' ).audioPlayer(); } );</script>
+    </div>
+    <div class="grid">
+      <h1>퀴즈</h1>
+      <div id="quiz">
+        <p id="question"></p>
+        <div class="buttons">
+          <button class="btn"></button>
+          <button class="btn"></button>
+          <button class="btn"></button>
+          <button class="btn"></button>
+        </div>
+      <footer>
+         <p id="progress">진행 정보</p>
+      </footer>
+      </div>
+    </div>
+  </body>
+  <script src="C:\Users\kc258\OneDrive\Desktop\sample\js\quiz1.js"></script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>코린이의 모험 ver 1.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\kc258\OneDrive\Desktop\sample\css\master.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+   $(document).ready(function(){
+     $('#outer-box').hide(); //hide는 요소를 숨길
+     $('#quiz').hide();
+     $('#systemimg1').hide();
+     $('#systemimg2').hide();
+     // $('div.conversation-box p').hide();
+     $('#choice1').click(function(){
+       $('#start').attr('src','안내메시지2.png').fadeIn(1000); //choice1을 클릭하면 start태그의 src가 안내메시지2로 바뀌고 fadein효과로 1초에 거쳐 나옴
+       $('#choice1').hide();
+       $('#choice2').hide();
+       $('#start').delay(1000).fadeOut(3000); //start 요소가 1초 딩레이후에 3초에걸쳐 fadeout
+       $('#outer-box').delay(4000).fadeIn(3000); //outer-box요소가 4초 딜레이후에 3초에걸쳐 fadein
+     })
+     $('#choice2').click(function(){
+       $('#start').attr('src','안내메시지2.png').fadeIn(1000);
+       $('#choice1').hide();
+       $('#choice2').hide();
+       $('#start').delay(1000).fadeOut(3000);
+       $('#outer-box').delay(4000).fadeIn(3000);
+     })
+     var texts=["","(웅성웅성)",
+     "OO : 와.. 사람 많다..! 여기가 서울과학기술대학교 컴퓨터공학과구나! 내가 진짜 이곳에 오게되다니... 감격인걸?",
+     "??? : 뚜둥 짠!~",
+     "OO : 으앗 깜짝이야 누구세요?",
+     "??? : 안녕 너가 이번에 새로온 코린이구나? 새내기배움터에 온 걸 환영해 나는 이 곳 서울과학기술대학교 컴퓨터공학과에서 새로 오는 코린이들을 우해 길라잡이 역할을 하고 있는 컴고수라고해. 너의 이름을 가르쳐주겠니?"];
+     var counter=0;
+     $('#triangle').click(function(){
+       counter=(counter + 1) % texts.length;
+       document.getElementById('texts').innerHTML = texts[counter]; //클릭할 때마다 texts배열에 있는 값들이 차례로 출력
+
+       if(counter==0){ // 배열마지막요소까지 출력되고나면 outer-box요소가 0.3초에걸쳐 0.1로 투명해지고 quiz요소와 systemimg2요소가 보임
+         $('#outer-box').fadeTo(300,0.1);
+         $('#quiz').show();
+         $('#systemimg2').show();
+       }
+     });
+
+     $('#quiz').submit(function(){ //아직 미완성 quiz요소 제출이벤트, 입력값을 name변수에 저장
+       var name = $('#name').val();
+
+     })
+   })
+   </script>
+  </head>
+  <body>
+    <img id='start' src="시작말2.png">
+        <img id='systemimg1' src"안내메시지2.png">
+        <img id='choice1' src='남자.png'>
+        <img id='choice2' src='여자.png'>
+        <div id = "outer-box">
+          <div id= "conversation-box">
+            <div id=texts></div>
+            <img id='triangle' src='세모.png' width="50px">
+          </div>
+        </div>
+        <img id="systemimg2" src='이름입력.png'>
+        <form id='quiz'><input type='text' id='name'><input type='submit' value='확인'></form>
+  </body>
+</html>
